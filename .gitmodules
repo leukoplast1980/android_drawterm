@@ -1,0 +1,3 @@
+[submodule "drawterm"]
+	path = drawterm
+	url = https://github.com/9front/drawterm

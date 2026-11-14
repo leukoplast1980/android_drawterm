@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- rio's desktop blue, and acme's pale yellow -->
+    <color name="rio">#FF444488</color>
+    <color name="window_light">#FFFFFFEA</color>
+    <color name="window_dark">#FF121218</color>
+</resources>

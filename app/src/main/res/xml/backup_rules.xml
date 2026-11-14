@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and older: back up server profiles only. -->
+<full-backup-content>
+    <exclude domain="file" path="secrets.json" />
+    <exclude domain="file" path="home/" />
+</full-backup-content>

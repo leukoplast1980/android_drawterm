@@ -1,0 +1,6 @@
+LIBDRAWTERM {
+  global:
+    JNI_OnLoad;
+  local:
+    *;
+};

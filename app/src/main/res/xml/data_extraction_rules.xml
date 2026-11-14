@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 12+: back up server profiles only; not passwords, not the drawterm folder. -->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="file" path="secrets.json" />
+        <exclude domain="file" path="home/" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="file" path="secrets.json" />
+    </device-transfer>
+</data-extraction-rules>
