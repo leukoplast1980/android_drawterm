@@ -14,8 +14,10 @@ Every push to this repository builds an APK automatically.
 
 1. Open the repository's **Actions** tab, pick the newest green run of
    **Build**, and download the `drawterm-…` artifact under **Artifacts**
-   (it is a zip with the APK inside). Tagged versions (`v1.0`, …) also appear
-   under **Releases**, as a plain APK.
+   (it is a zip with the APK inside). Versions published under **Releases**
+   have a plain APK instead: on the Releases page, choose **Draft a new
+   release**, type a new tag such as `v1.0`, and publish; the build adds the
+   APK to it a few minutes later.
 2. Open the APK on the phone. Android asks once whether your browser or file
    manager may install apps; allow it.
 

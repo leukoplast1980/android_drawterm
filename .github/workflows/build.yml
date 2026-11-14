@@ -1,8 +1,8 @@
 name: Build
 
 # Every push builds an APK you can download from the run's page
-# (Actions → the run → Artifacts). Pushing a tag like v1.0 also publishes it
-# as a GitHub release.
+# (Actions → the run → Artifacts). A tag like v1.0, pushed or made with a
+# release on the Releases page, also puts the APK on that release.
 
 on:
   push:
@@ -99,5 +99,10 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" out/*.apk \
-            --title "drawterm $GITHUB_REF_NAME" --generate-notes
+          # a release made on GitHub's Releases page already exists: just add the APK
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" out/*.apk --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" out/*.apk \
+              --title "drawterm $GITHUB_REF_NAME" --generate-notes
+          fi
