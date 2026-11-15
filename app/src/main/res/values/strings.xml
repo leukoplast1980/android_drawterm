@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">drawterm</string>
+    <string name="app_name">Drawterm</string>
 
     <!-- server list -->
     <string name="about">About</string>
-    <string name="about_text">drawterm %1$s, for Plan 9 and 9front CPU servers.\n\nTap: button 1. Long press: button 3. Two fingers: button 2, or drag to scroll. While dragging, tap one more finger to cut or two more to paste. Three-finger tap: keyboard. Back: menu.\n\nFiles in the drawterm folder of the Files app appear as /mnt/term on the server.</string>
+    <string name="about_text">Drawterm %1$s, for Plan 9 and 9front CPU servers.\n\nTap: button 1. Long press: button 3. Two fingers: button 2, or drag to scroll. While dragging, tap one more finger to cut or two more to paste. Three-finger tap: keyboard. Back: menu.\n\nFiles in the Drawterm folder of the Files app appear as /mnt/term on the server.</string>
     <string name="add_server">Add server</string>
-    <string name="files">drawterm folder</string>
+    <string name="files">Drawterm folder</string>
     <string name="files_summary">Shared with your Plan 9 servers</string>
-    <string name="files_unavailable">Open the Files app and choose drawterm in its menu.</string>
+    <string name="files_unavailable">Open the Files app and choose Drawterm in its menu.</string>
     <string name="empty">Add a Plan 9 or 9front CPU server to connect to.</string>
     <string name="edit">Edit</string>
     <string name="reconnect">Reconnect</string>
@@ -32,7 +32,7 @@
     <string name="password">Password</string>
     <string name="password_saved">Saved; type to change</string>
     <string name="password_hint_saved">Stored encrypted on this device</string>
-    <string name="password_hint_ask">drawterm will ask for it when connecting</string>
+    <string name="password_hint_ask">Drawterm will ask for it when connecting</string>
     <string name="save_password">Remember password</string>
     <string name="save_password_desc">Encrypted with a key kept in Android\'s keystore, never backed up</string>
     <string name="aan">Survive network drops (aan)</string>
@@ -40,8 +40,8 @@
     <string name="keep_alive">Stay connected in the background</string>
     <string name="keep_alive_desc">Keeps the session running while you use other apps</string>
     <string name="phone_storage">Share phone storage</string>
-    <string name="phone_storage_desc">The server sees all your files as /mnt/term. Off: only the drawterm folder.</string>
-    <string name="phone_storage_needs_access">Needs \"All files access\"; until granted, only the drawterm folder is shared</string>
+    <string name="phone_storage_desc">The server sees all your files as /mnt/term. Off: only the Drawterm folder.</string>
+    <string name="phone_storage_needs_access">Needs \"All files access\"; until granted, only the Drawterm folder is shared</string>
     <string name="field_name">Name</string>
     <string name="field_name_hint">Optional, shown in the list</string>
     <string name="section_screen">Screen and input</string>
@@ -62,7 +62,7 @@
     <string name="field_encryption">Encryption</string>
     <string name="field_encryption_hint">Cipher and hash for -e (older cpu servers); usually empty</string>
     <string name="field_args">Extra arguments</string>
-    <string name="field_args_hint">Passed to drawterm as-is</string>
+    <string name="field_args_hint">Passed to Drawterm as-is</string>
 
     <!-- session -->
     <string name="profile_missing">This server is no longer in the list.</string>
@@ -80,7 +80,7 @@
     <string name="disconnect_title">Disconnect from %1$s?</string>
 
     <!-- how sessions end -->
-    <string name="session_failed">drawterm exited with status %1$d.</string>
+    <string name="session_failed">Drawterm exited with status %1$d.</string>
     <string name="session_lost">The session ended unexpectedly; Android may have stopped it.</string>
 
     <!-- notifications -->
