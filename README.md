@@ -69,7 +69,9 @@ keyboard: a resize makes every Plan 9 program redraw, over the network.
 
 ### Files
 
-On the server, `/mnt/term` is the **drawterm folder**, which you also find in
+On the server, the files of the **drawterm folder** appear in `/mnt/term`, next
+to drawterm's own directories (`dev`, `env`, …), and alone in `/mnt/term/root`.
+New files can be created in either. You also find the folder in
 Android's Files app (the folder button on the server list opens it) and in
 every app's file picker, so files move between Plan 9 and Android apps
 without any storage permission. *Share phone

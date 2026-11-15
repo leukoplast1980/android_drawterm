@@ -106,6 +106,7 @@ target_link_options(drawterm PRIVATE
     "-Wl,--wrap=exit"
     "-Wl,--wrap=readcons"
     "-Wl,--wrap=so_connect"
+    "-Wl,--wrap=sysbind"
     "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/libdrawterm.map.txt"
     "-Wl,--gc-sections"
     "-Wl,-z,max-page-size=16384")

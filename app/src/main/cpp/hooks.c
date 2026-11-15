@@ -6,12 +6,14 @@
  *	exit		report why the session ended before the process goes
  *	readcons	show the soft keyboard while drawterm prompts
  *	so_connect	tune TCP sockets for mobile networks
+ *	sysbind		let the server create files in the shared folder
  */
 #include <android/log.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
 #include <pthread.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
@@ -24,6 +26,10 @@ char*	__wrap_readcons(char*, char*, int);
 char*	__real_readcons(char*, char*, int);
 void	__wrap_so_connect(int, unsigned char*, unsigned short);
 void	__real_so_connect(int, unsigned char*, unsigned short);
+int	__wrap_sysbind(char*, char*, int);
+int	__real_sysbind(char*, char*, int);
+
+#define	MCREATE	0x0004	/* as in drawterm's include/lib.h */
 
 void
 __wrap_exit(int code)
@@ -84,4 +90,19 @@ __wrap_so_connect(int fd, unsigned char *raddr, unsigned short rport)
 		}
 	}
 	__real_so_connect(fd, raddr, rport);
+}
+
+/*
+ * Upstream binds the shared folder on /root, and /root after / (which the
+ * server sees as /mnt/term), both without MCREATE. On a PC the folder is
+ * the whole disk and files go into its subdirectories; here it is a single
+ * folder, so new files must be allowed at its top level, both through
+ * /mnt/term/root and /mnt/term itself.
+ */
+int
+__wrap_sysbind(char *old, char *new, int flag)
+{
+	if(strcmp(new, "/root") == 0 || (strcmp(old, "/root") == 0 && strcmp(new, "/") == 0))
+		flag |= MCREATE;
+	return __real_sysbind(old, new, flag);
 }

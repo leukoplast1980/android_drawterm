@@ -4,7 +4,7 @@
 
     <!-- server list -->
     <string name="about">About</string>
-    <string name="about_text">Drawterm %1$s, for Plan 9 and 9front CPU servers.\n\nTap: button 1. Long press: button 3. Two fingers: button 2, or drag to scroll. While dragging, tap one more finger to cut or two more to paste. Three-finger tap: keyboard. Back: menu.\n\nFiles in the Drawterm folder of the Files app appear as /mnt/term on the server.</string>
+    <string name="about_text">Drawterm %1$s, for Plan 9 and 9front CPU servers.\n\nTap: button 1. Long press: button 3. Two fingers: button 2, or drag to scroll. While dragging, tap one more finger to cut or two more to paste. Three-finger tap: keyboard. Back: menu.\n\nFiles in the Drawterm folder of the Files app appear in /mnt/term on the server.</string>
     <string name="add_server">Add server</string>
     <string name="files">Drawterm folder</string>
     <string name="files_summary">Shared with your Plan 9 servers</string>
