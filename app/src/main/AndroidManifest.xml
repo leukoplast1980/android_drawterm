@@ -82,7 +82,7 @@
             android:grantUriPermissions="true"
             android:permission="android.permission.MANAGE_DOCUMENTS">
             <intent-filter>
-                <action android:name="android.provider.action.DOCUMENTS_PROVIDER" />
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
             </intent-filter>
         </provider>
     </application>
