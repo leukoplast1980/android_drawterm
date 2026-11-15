@@ -112,9 +112,16 @@ appears under that server, with Reconnect.
 | `/mnt/term/dev/accel`       | `x y z` acceleration, m/s²            |
 | `/mnt/term/dev/compass`     | `x y z` magnetic field, µT            |
 | `/mnt/term/dev/notification` | write text to post a notification    |
+| `/mnt/term/dev/audio`       | write sound to play it on the phone   |
+| `/mnt/term/dev/volume`      | `audio` volume, 0–100                 |
 
 Camera and notification permissions are asked for the first time a Plan 9
 program uses them, never up front.
+
+Sound is played, not recorded. To use it, run `bind /mnt/term/dev/audio /dev/audio`
+on the server; then `play`, `zuke` and the rest work as on a terminal.
+`/mnt/term/dev/volume` is a software volume (0.4 dB per step) under the
+phone's own.
 
 ## Building
 

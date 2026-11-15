@@ -29,7 +29,8 @@ function(dt_sources dir outvar)
     endif()
     string(REPLACE "\nOFILES=" "" ofiles "${ofiles}")
     string(REPLACE "$(OS)" "posix" ofiles "${ofiles}")
-    string(REPLACE "$(AUDIO)" "none" ofiles "${ofiles}")
+    # the audio backend is ours: devaudio-android.c
+    string(REPLACE "devaudio-$(AUDIO).$O" "" ofiles "${ofiles}")
     string(REPLACE "$(XOFILES)" "" ofiles "${ofiles}")
     string(REPLACE "$O" "c" ofiles "${ofiles}")
     separate_arguments(ofiles UNIX_COMMAND "${ofiles}")
@@ -95,12 +96,13 @@ add_library(drawterm SHARED
     screen.c
     devandroid.c
     jni.c
-    hooks.c)
+    hooks.c
+    devaudio-android.c)
 target_include_directories(drawterm PRIVATE ${DT_INCLUDES} "${CMAKE_CURRENT_SOURCE_DIR}")
 target_compile_options(drawterm PRIVATE
     -Wall -Wno-missing-braces -Wno-parentheses -Wno-unused-parameter
     -fno-strict-aliasing)
-target_link_libraries(drawterm PRIVATE ${DT_LIB_TARGETS} android log m)
+target_link_libraries(drawterm PRIVATE ${DT_LIB_TARGETS} aaudio android log m)
 target_link_options(drawterm PRIVATE
     # see hooks.c
     "-Wl,--wrap=exit"
