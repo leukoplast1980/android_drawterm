@@ -134,6 +134,14 @@ class MainActivity : ComponentActivity(), AppActions {
     /** The drawterm folder in Android's Files app. */
     override fun openFiles() {
         val view = Intent(Intent.ACTION_VIEW).setDataAndType(HomeProvider.rootUri(this), DocumentsContract.Root.MIME_TYPE_ITEM)
+        // Other apps (file managers, "save to" helpers) accept a VIEW of anything
+        // and would take the folder for a file named "home"; only the system's
+        // Files app knows what a document root is.
+        @Suppress("DEPRECATION") // the flags-object overload is API 33+
+        val system = packageManager.queryIntentActivities(view, PackageManager.MATCH_SYSTEM_ONLY)
+        val files = (system.firstOrNull { it.activityInfo.packageName.endsWith(".documentsui") } ?: system.firstOrNull())
+            ?.activityInfo
+        if (files != null) view.setClassName(files.packageName, files.name)
         runCatching { startActivity(view) }
             .onFailure { Toast.makeText(this, R.string.files_unavailable, Toast.LENGTH_LONG).show() }
     }
